@@ -5,6 +5,8 @@ import logo from '../Assets/yinka-logo.png';
 import { FaBars, FaTimes} from 'react-icons/fa';
 import {useDispatch} from 'react-redux'
 import {setShow, removeShow} from '../Features/navSlice'
+import { motion, spring, useInView, useAnimation } from "framer-motion"
+import cart from '../Assets/cart2.svg'
 
 const Navbar = () => {
     const [openNav,setOpenNav] = useState(true)
@@ -37,11 +39,19 @@ const Navbar = () => {
                 <NavLink to='/faqs' onClick={navLinks}>Women</NavLink>
                 <NavLink to='/resources' onClick={navLinks}>Kids</NavLink>
                 <NavLink to='/login' className='signinbtn mt-5'><small class='pt-5' onClick={navLinks}>Sign in</small></NavLink>
-                <button className='signupbtn text-white px-4'>Create Free Account</button>
-                <button className='nav-btn nav-close-btn' onClick={showNavbar}>
+
+                <motion.button
+                    whileHover={{ scale:1.1 }}
+                    className='signupbtn text-white px-4'>Create Account
+                </motion.button>
+                <img className='cart ms-lg-' src={cart} alt='cart' />
+                <motion.button 
+                    whileHover={{ scale:1.1 }}
+                    className='nav-btn nav-close-btn' onClick={showNavbar}>
                     <FaTimes onClick={toggle2} />
-                </button>
+                </motion.button>
             </nav>
+            
             {openNav? (<button className='nav-btn nav-open-btn' onClick={showNavbar}>
                 <FaBars onClick={toggle} />
             </button>) : ""}

@@ -1,9 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Space Grotesk', sans-serif;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: "Zilla Slab", serif !important;
+    font-weight: 400;
+    font-style: normal;
 }
 header{
     display: flex;
@@ -19,12 +21,9 @@ header{
     background-color: #cfb69f;
     /* background-color: #dac9b9; */
 }
-table{
-    width: 80% !important; 
-    background-color: rgb(219, 216, 216) !important;
-    border-radius: 1.5rem;
-    min-height: 50vh;
-    padding: 1rem 2rem 1rem 2rem;
+.cart{
+    height: 3rem;
+    width: 3rem;
 }
 tr{
     height: 3rem !important;
@@ -47,14 +46,6 @@ tr{
     padding: 1rem;
     left: 18rem;
 }
-.brandname{
-    color: #0c1825;
-    font-size: 1.8rem;
-    font-family: cursive !important;
-    position: relative;
-    right: 3rem;
-    top: 0.7rem;
-}
 span{overflow-y: hidden;}
 small{
     position: relative;
@@ -66,10 +57,9 @@ nav{
 }
 nav a{
     margin: 0 1rem;
-    font-size: 1rem;
-    font-weight: bold;
+    font-size: 1.2rem;
     color: #181511;
-    color: #362c20;
+    font-weight: 500;
     text-decoration: none;
 }
 header .nav-btn {
@@ -85,13 +75,13 @@ header .nav-btn {
 }
 .signinbtn{
     border: thin solid #181511;
-    border-radius: 10px;
-    padding: 14px;
+    border-radius: 6px;
+    padding: 13px;
     font-size: 1.2rem;
 }
 .signupbtn{
     background-color: #181511 !important;
-    border-radius: 10px;
+    border-radius: 6px;
     padding: 12px 12px 14px 12px;
     border: none;
     font-size: 1.2rem;
