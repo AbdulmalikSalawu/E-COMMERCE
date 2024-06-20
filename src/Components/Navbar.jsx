@@ -21,21 +21,21 @@ const Navbar = () => {
         setOpenNav(true)
      }
      const toggle = () => {
-        alert("working")
+       
      }
      const toggle2 = () => {
-        alert("working too")
+        
      }
 
   return (
     <div className='navbar'>
         <header className='sticky-top shadow-sm'>
-            <span className='navsvg d-flex ms-lg-3'><img class="logo ms-5" src={logo} alt="svg image"/><span class="brandname mb-lg-3 fw-bold">saveWyse</span></span>
+            <span className='navsvg d-flex ms-lg-3'><img class="logo ms-5" src={logo} alt="svg image"/></span>
             <nav ref={navRef} className='pb-2'>
-                <NavLink to='/invest' onClick={navLinks}>Invest</NavLink>
-                <NavLink to='/stories' onClick={navLinks}>Stories</NavLink>
-                <NavLink to='/faqs' onClick={navLinks}>FAQs</NavLink>
-                <NavLink to='/resources' onClick={navLinks}>Resources</NavLink>
+                <NavLink to='/invest' onClick={navLinks}>Shop</NavLink>
+                <NavLink to='/stories' onClick={navLinks}>Men</NavLink>
+                <NavLink to='/faqs' onClick={navLinks}>Women</NavLink>
+                <NavLink to='/resources' onClick={navLinks}>Kids</NavLink>
                 <NavLink to='/login' className='signinbtn mt-5'><small class='pt-5' onClick={navLinks}>Sign in</small></NavLink>
                 <button className='signupbtn text-white px-4'>Create Free Account</button>
                 <button className='nav-btn nav-close-btn' onClick={showNavbar}>
