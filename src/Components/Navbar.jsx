@@ -1,8 +1,32 @@
-import React from 'react'
+import React, {useRef,useState} from 'react'
+import { NavLink, useNavigate } from 'react-router-dom';
 import '../Styles/Navbar.css'
 import logo from '../Assets/yinka-logo.png';
+import { FaBars, FaTimes} from 'react-icons/fa';
+import {useDispatch} from 'react-redux'
+import {setShow, removeShow} from '../Features/navSlice'
 
 const Navbar = () => {
+    const [openNav,setOpenNav] = useState(true)
+    const navRef = useRef();
+    // const navigate = useNavigate()
+    const dispatch = useDispatch()
+
+    const showNavbar = () => {
+        navRef.current.classList.toggle("responsive_nav")
+    }
+     const navLinks = () => {
+        navRef.current.classList.toggle("responsive_nav")
+        // dispatch(setShow())
+        setOpenNav(true)
+     }
+     const toggle = () => {
+        alert("working")
+     }
+     const toggle2 = () => {
+        alert("working too")
+     }
+
   return (
     <div className='navbar'>
         <header className='sticky-top shadow-sm'>
@@ -12,8 +36,8 @@ const Navbar = () => {
                 <NavLink to='/stories' onClick={navLinks}>Stories</NavLink>
                 <NavLink to='/faqs' onClick={navLinks}>FAQs</NavLink>
                 <NavLink to='/resources' onClick={navLinks}>Resources</NavLink>
-                <NavLink to='/login' onClick={()=>navigate('login')} className='signinbtn mt-5'><small class='pt-5' onClick={navLinks}>Sign in</small></NavLink>
-                <button onClick={goToSignup} className='signupbtn text-white px-4'>Create Free Account</button>
+                <NavLink to='/login' className='signinbtn mt-5'><small class='pt-5' onClick={navLinks}>Sign in</small></NavLink>
+                <button className='signupbtn text-white px-4'>Create Free Account</button>
                 <button className='nav-btn nav-close-btn' onClick={showNavbar}>
                     <FaTimes onClick={toggle2} />
                 </button>
