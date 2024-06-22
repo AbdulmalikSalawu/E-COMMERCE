@@ -28,6 +28,7 @@ function App() {
         <Route path='/kids' element={<Shopcategory />}></Route>
         <Route path='/women' element={<Shopcategory />}></Route>
         {/* <Route path='*' element={<Nomatch />}></Route> */}
+        {/* <Footer /> */}
       </Routes>
     </div>
   );

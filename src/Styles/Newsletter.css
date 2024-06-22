@@ -46,6 +46,9 @@
     color: white;
 }
 @media screen and (max-width: 800px) {
+    .newsletter{
+        width: 90%;
+    }
     .newsletter div{
         width: 90%;
     }

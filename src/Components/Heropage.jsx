@@ -8,6 +8,7 @@ import Popular from './Popular';
 import Offers from './Offers';
 import NewCollections from './NewCollections';
 import NewsLetter from './NewsLetter';
+import Footer from './Footer';
 
 const Heropage = () => {
 
@@ -52,6 +53,7 @@ const Heropage = () => {
           <Offers />
           <NewCollections />
           <NewsLetter />
+          <Footer />
 
     </div>
   )
