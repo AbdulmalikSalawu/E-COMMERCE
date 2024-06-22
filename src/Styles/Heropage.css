@@ -1,0 +1,36 @@
+*{
+    overflow-x: hidden;
+}
+.bigHeading{
+    font-size: 3.5rem;
+    display: block;
+    margin: auto;
+}
+.herobutton{
+    padding: 0.8rem 1.8rem 0.8rem 1.8rem;
+    border-radius: 0.6rem;
+    color: white;
+    font-size: 1.2rem;
+    background-color: #181511;
+    border: none;
+}
+.lady{
+    height: 29rem;
+    width: 23rem;
+}
+
+@media screen and (max-width:800px) {
+    .bigHeading{
+        font-size: 2.5rem;
+        margin-right: 2rem;
+    }
+    .mission{
+        margin-right: 2rem;
+    }
+    .lady{
+        width: 80% !important;
+        height: 25rem;
+        display: block;
+        margin: auto;
+    }
+}
