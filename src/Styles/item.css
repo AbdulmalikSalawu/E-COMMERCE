@@ -1,6 +1,10 @@
 .item p{
     margin: 6px 0px;
 }
+.item{
+    background-color: #f9ecdb;
+    border-radius: 1rem;
+}
 /* .item-prices{
     display: flex;
 } */
@@ -29,5 +33,8 @@
     .popimg{
         width: 90%;
        height: 25rem;
+    }
+    .item{
+        margin-bottom: 2rem;
     }
 }

@@ -8,6 +8,9 @@ import Signup from './Components/Signup';
 import Cart from './Components/Cart';
 import Shopcategory from './Components/Shopcategory';
 import Heropage from './Components/Heropage';
+import kidscategory from './Assets/kidscategory.png'
+import womencategory from './Assets/womencategory.png'
+import mencategory from './Assets/mencategory.png'
 
 function App() {
   return (
@@ -24,9 +27,9 @@ function App() {
         </Route>
         <Route path='/login' element={<Login />}></Route>
         <Route path='/signup' element={<Signup />}></Route>
-        <Route path='/men' element={<Shopcategory />}></Route>
-        <Route path='/kids' element={<Shopcategory />}></Route>
-        <Route path='/women' element={<Shopcategory />}></Route>
+        <Route path='/men' element={<Shopcategory banner={mencategory} category="men" />}></Route>
+        <Route path='/kids' element={<Shopcategory banner={kidscategory} category="kids" />}></Route>
+        <Route path='/women' element={<Shopcategory banner={womencategory} category="women" />}></Route>
         {/* <Route path='*' element={<Nomatch />}></Route> */}
         {/* <Footer /> */}
       </Routes>

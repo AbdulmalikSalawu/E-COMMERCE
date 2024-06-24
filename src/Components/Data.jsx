@@ -1,37 +1,78 @@
-import popimg1 from '../Assets/popimg1.PNG'
-import popimg2 from '../Assets/popimg2.PNG'
-import popimg3 from '../Assets/popimg3.PNG'
-import popimg4 from '../Assets/popimg4.PNG'
+import womenGown from '../Assets/womenGown.png'
+import womenGown2 from '../Assets/womenGown2.png'
+import womenTravelBag from '../Assets/womenTravelBag.png'
+import womenShoe from '../Assets/womenShoe.png'
+import menShoe from '../Assets/menShoe.png'
+import menWatch from '../Assets/menWatch.png'
+import menCasual from '../Assets/menCasual.png'
+import menSuit from '../Assets/menSuit.png'
 
 let productData = [
     {
         id: 1,
         name: "Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
-        image:popimg1,
+        image: womenGown,
         newPrice: 50.00,
         oldPrice: 80.50,
+        category: "women"
     },
     {
         id: 2,
         name: "Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
-        image:popimg2,
+        image:womenGown2,
         newPrice: 150.00,
         oldPrice: 280.50,
+        category: "women",
     },
     {
         id: 3,
         name: "Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
-        image:popimg3,
+        image:womenTravelBag,
         newPrice: 150.00,
         oldPrice: 280.50,
+        category: "women",
     },
     {
         id: 4,
         name: "Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
-        image:popimg4,
+        image:womenShoe,
         newPrice: 150.00,
         oldPrice: 280.50,
+        category: "women",
+    },
+    {
+        id: 5,
+        name: "Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
+        image:menShoe,
+        newPrice: 150.00,
+        oldPrice: 280.50,
+        category: "men",
+    },
+    {
+        id: 6,
+        name: "Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
+        image:menCasual,
+        newPrice: 150.00,
+        oldPrice: 280.50,
+        category: "men",
+    },
+    {
+        id: 7,
+        name: "Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
+        image:menSuit,
+        newPrice: 150.00,
+        oldPrice: 280.50,
+        category: "men",
+    },
+    {
+        id: 8,
+        name: "Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
+        image:menWatch,
+        newPrice: 150.00,
+        oldPrice: 280.50,
+        category: "men",
     }
+    
 ]
 
 export default productData

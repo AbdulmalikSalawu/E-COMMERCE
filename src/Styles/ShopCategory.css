@@ -1,0 +1,18 @@
+.dropdown{
+    width: 1.8rem;
+    height: 1.8rem !important;
+}
+.shopProducts{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    width: 80%;
+    margin: auto;
+}
+
+@media screen and (max-width:800px) {
+    .shopProducts{
+        width: 90%;
+        display: block;
+    }
+}

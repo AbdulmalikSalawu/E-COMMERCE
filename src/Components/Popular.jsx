@@ -10,7 +10,9 @@ const Popular = () => {
         <hr />
         <div className='popular-item'>
             {productData.map((item,i)=>{
+              if(item.category==="women"){
                 return <Items key={i} id={item.id} name={item.name} image={item.image} newPrice={item.newPrice} oldPrice={item.oldPrice} />
+              }
             })}
         </div>
     </div>
