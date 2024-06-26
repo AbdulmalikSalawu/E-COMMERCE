@@ -1,4 +1,12 @@
 .arrowIcon{
     height: 2rem;
     width: 2rem;
+    background-color: red;
+    position: relative;
+}
+.breadcrumb{
+    display: flex;
+    align-items: center;
+    margin-top: 5rem !important;
+    padding-left: 5rem;
 }
