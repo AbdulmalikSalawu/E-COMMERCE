@@ -10,7 +10,7 @@ import menSuit from '../Assets/menSuit.png'
 let productData = [
     {
         id: 1,
-        name: "Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
+        name: "WOMEN GOWN.",
         image: womenGown,
         newPrice: 50.00,
         oldPrice: 80.50,
@@ -18,7 +18,7 @@ let productData = [
     },
     {
         id: 2,
-        name: "Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
+        name: "WOMEN GOWN",
         image:womenGown2,
         newPrice: 150.00,
         oldPrice: 280.50,
@@ -26,7 +26,7 @@ let productData = [
     },
     {
         id: 3,
-        name: "Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
+        name: "TRAVELING BAG",
         image:womenTravelBag,
         newPrice: 150.00,
         oldPrice: 280.50,
@@ -34,7 +34,7 @@ let productData = [
     },
     {
         id: 4,
-        name: "Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
+        name: "NICE SHOE FOR LADIES",
         image:womenShoe,
         newPrice: 150.00,
         oldPrice: 280.50,
@@ -42,7 +42,7 @@ let productData = [
     },
     {
         id: 5,
-        name: "Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
+        name: "NICE MALE SHOE.",
         image:menShoe,
         newPrice: 150.00,
         oldPrice: 280.50,
@@ -50,7 +50,7 @@ let productData = [
     },
     {
         id: 6,
-        name: "Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
+        name: "CASUAL WEAR FOR GUYS",
         image:menCasual,
         newPrice: 150.00,
         oldPrice: 280.50,
@@ -58,7 +58,7 @@ let productData = [
     },
     {
         id: 7,
-        name: "Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
+        name: "CORPORATE OFFICE SUIT",
         image:menSuit,
         newPrice: 150.00,
         oldPrice: 280.50,
@@ -66,7 +66,7 @@ let productData = [
     },
     {
         id: 8,
-        name: "Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
+        name: "CLASSY WRISTWATCH.",
         image:menWatch,
         newPrice: 150.00,
         oldPrice: 280.50,
