@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import "../Styles/ProductDisplay.css"
 import star from "../Assets/star-fill.svg"
 import starLight from "../Assets/star.svg"
+import { ShopContext } from '../Context/ShopContext'
 
 const ProductDisplay = (props) => {
     const {product} = props;
+    const {addToCart} = useContext(ShopContext);
 
   return (
     <div className='displayProduct'>
@@ -28,8 +30,8 @@ const ProductDisplay = (props) => {
                 <img className='starIcon' src={star} alt="" />
                 <img className='starIcon' src={star} alt="" />
                 <img className='starIcon' src={starLight} alt="" />
-                <p>122</p>
             </div>
+                {/* <p>122</p> */}
             <div className="price">
                 <div className="oldPrice">${product.oldPrice}</div>
                 <div className="newPrice">${product.newPrice}</div>
@@ -47,8 +49,8 @@ const ProductDisplay = (props) => {
                     <div>XXL</div>
                 </div>
             </div>
-            <button>ADD TO CART</button>
-            <p className='category'><span>Category :</span>Women, T-shirt</p>
+            <button onClick={()=> {addToCart(product.id)}} className='addToCart'>ADD TO CART</button>
+            <p className='category'><span>Category :</span>{product.category}</p>
             <p className='category'><span>Tags :</span>Modern, Latest</p>
         </div>
     </div>
