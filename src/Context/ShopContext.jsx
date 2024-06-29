@@ -4,7 +4,7 @@ import productData from '../Components/Data'
 export const ShopContext = createContext(null)
 const getDefaultCart = () => {
     let cart = {};
-    for (let index = 0; index < productData.length; index++) {
+    for (let index = 0; index < productData.length+1; index++) {
         cart[index] = 0
     }
     return cart;

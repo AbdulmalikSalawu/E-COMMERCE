@@ -2,14 +2,16 @@ import React, { useContext } from 'react'
 import "../Styles/Cart.css"
 import { ShopContext } from '../Context/ShopContext'
 import remove from "../Assets/remove.svg"
+import Navbar from './Navbar'
 
 const Cart = () => {
-    const {productData,cartItems,addToCArt,removeFromCart} = useContext(ShopContext)
+    const {productData,cartItems,removeFromCart} = useContext(ShopContext)
 
   return (
-    <div className='cart'>
-        <div className="mainCart">
-            <p>Product</p>
+    <div className='cartPage'>
+        <Navbar />
+        <div className="mainCart mt-5">
+            <p>HProduct</p>
             <p>Title</p>
             <p>Price</p>
             <p>Quantity</p>
@@ -19,8 +21,8 @@ const Cart = () => {
         <hr />
         {productData.map((e)=>{
             if(cartItems[e.id]>0) {
-            return  
-                <div>
+            return  ( 
+                <div key={e.id}>
                     <div className="cartFormat">
                         <img src={e.image} alt="" className='productIcon' />
                         <p>{e.name}</p>
@@ -30,8 +32,8 @@ const Cart = () => {
                         <img src={remove} onClick={()=>{removeFromCart(e.id)}} alt="" />
                     </div>
                     <hr />
-                </div>
-            }
+                </div>);
+            } return null
         })}
        
     </div>
