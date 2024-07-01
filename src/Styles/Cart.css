@@ -1,4 +1,21 @@
-.cartPage{
-    height: 100vh;
-    width: 100vw;
+/* .cartPage{
+    margin: 100px 170px
+} */
+.cartPage hr{
+    height: 3px;
+}
+.mainCart{
+    display: grid;
+    grid-template-columns: 0.5fr 2fr 1fr 1fr 1fr 1fr;
+    align-items: center;
+    /* gap: 75px; */
+    padding: 20px 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+@media screen and (max-width:800px) {
+    .mainCart {
+        font-size: 0.8rem;
+    }
 }

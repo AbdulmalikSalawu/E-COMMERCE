@@ -11,7 +11,7 @@ import cart from '../Assets/cart2.svg'
 const Navbar = () => {
     const [openNav,setOpenNav] = useState(true)
     const navRef = useRef();
-    // const navigate = useNavigate()
+    const navigate = useNavigate()
     const dispatch = useDispatch()
 
     const showNavbar = () => {
@@ -44,7 +44,7 @@ const Navbar = () => {
                     whileHover={{ scale:1.1 }}
                     className='signupbtn text-white px-4'>Create Account
                 </motion.button>
-                <img className='cart ms-lg-' src={cart} alt='cart' />
+                <img onClick={()=>navigate("/cart")} className='cart ms-lg-' src={cart} alt='cart' />
                 <button 
                     className='nav-btn nav-close-btn' onClick={showNavbar}>
                     <FaTimes onClick={toggle2} />
