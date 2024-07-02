@@ -6,6 +6,9 @@ import menShoe from '../Assets/menShoe.png'
 import menWatch from '../Assets/menWatch.png'
 import menCasual from '../Assets/menCasual.png'
 import menSuit from '../Assets/menSuit.png'
+import kidsGreyShirt from '../Assets/kidsGreyShirt.png'
+import kidsHat from '../Assets/kidsHat.png'
+import kidsSneakers from '../Assets/kidsSneakers.png'
 
 let productData = [
     {
@@ -71,6 +74,30 @@ let productData = [
         newPrice: 150.00,
         oldPrice: 280.50,
         category: "men",
+    },
+    {
+        id: 9,
+        name: "GREY T-SHIRT FOR KIDS.",
+        image:kidsGreyShirt,
+        newPrice: 150.00,
+        oldPrice: 280.50,
+        category: "kids",
+    },
+    {
+        id: 10,
+        name: "NICE KIDS'HAT.",
+        image:kidsHat,
+        newPrice: 150.00,
+        oldPrice: 280.50,
+        category: "kids",
+    },
+    {
+        id: 11,
+        name: "COOL BABY SNEAKERS.",
+        image:kidsSneakers,
+        newPrice: 150.00,
+        oldPrice: 280.50,
+        category: "kids",
     }
     
 ]

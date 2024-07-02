@@ -11,7 +11,7 @@ import carti from '../Assets/cart2.svg'
 import { useNavigate } from 'react-router'
 
 const Cart = () => {
-    const {productData,cartItems,removeFromCart} = useContext(ShopContext)
+    const {getTotalAmount,productData,cartItems,removeFromCart} = useContext(ShopContext)
     const navigate = useNavigate()
 
   return (
@@ -50,7 +50,7 @@ const Cart = () => {
                 <div>
                     <div className="cartitems-total-item">
                         <p>Subtotal</p>
-                        <p>${0}</p>
+                        <p>${getTotalAmount()}</p>
                     </div>
                     <div className="cartitems-total-item">
                         <p>Shipping Fee</p>
@@ -59,7 +59,7 @@ const Cart = () => {
                     <hr />
                     <div className="cartitems-total-item">
                         <h3>Total</h3>
-                        <h3>${0}</h3>
+                        <h3>${getTotalAmount()}</h3>
                     </div>
                 </div>
                 <button className='checkout mt-4'>Proceed to Checkout</button>
