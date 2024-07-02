@@ -31,10 +31,14 @@
     }
     .popular-item{
         margin: auto;
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        width: 90%;
     }
     .popular hr{
         display: block;
         margin: auto;
         margin-bottom: 2rem;
+        width: 90%;
     }
 }

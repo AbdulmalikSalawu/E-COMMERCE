@@ -31,10 +31,12 @@
 
 @media screen and (max-width:800px){
     .popimg{
-        width: 90%;
-       height: 25rem;
+        width: 80%;
+        height: 12rem;
     }
     .item{
-        margin-bottom: 2rem;
+        width: 100%;
+        margin-bottom: 2rem !important;
+       
     }
 }

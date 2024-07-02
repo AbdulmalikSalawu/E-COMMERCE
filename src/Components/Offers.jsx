@@ -7,7 +7,7 @@ const Offers = () => {
   return (
     <div className='offers'>
         <div className="offers-left">
-            <h1>Exclusive</h1>
+            <h1 className='text-center d-block m-auto'>Exclusive</h1>
             <h2>Offers for you</h2>
             <p>ONLY ON BEST SELLERS PRODUCT</p>
             <motion.button initial={{ x: '-50vw' }} 

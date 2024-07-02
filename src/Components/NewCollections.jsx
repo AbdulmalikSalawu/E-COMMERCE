@@ -9,7 +9,7 @@ const NewCollections = () => {
         <h2 className='mt-3'>NEW COLLECTIONS</h2>
         <hr />
         <div className='collections-item'>
-            {productData.map((item,i)=>{
+            {productData.filter((item)=>item.id>7).map((item,i)=>{
                 return <Items key={i} id={item.id} name={item.name} image={item.image} newPrice={item.newPrice} oldPrice={item.oldPrice}/>
             })}
         </div>

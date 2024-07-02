@@ -105,6 +105,7 @@ small{
     position: relative;
     top: 0.1rem;
 }
+.cartCount{color: red;}
 
 @media screen and (max-width: 950px) {
     
@@ -170,6 +171,12 @@ small{
     }
     table{
         width: 95% !important;
+    }
+    .cartCount{
+        position: relative;
+        bottom: 6rem;
+        left: 2.5rem;
+        font-size: 1.2rem;
     }
     /* td{width: 20% !important;} */
 }

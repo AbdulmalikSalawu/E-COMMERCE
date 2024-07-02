@@ -1,4 +1,4 @@
-import React, {useRef,useState} from 'react'
+import React, {useContext, useRef,useState} from 'react'
 import { NavLink, useNavigate } from 'react-router-dom';
 import '../Styles/Navbar.css'
 import logo from '../Assets/yinka-logo.png';
@@ -7,12 +7,14 @@ import {useDispatch} from 'react-redux'
 import {setShow, removeShow} from '../Features/navSlice'
 import { motion, spring, useInView, useAnimation } from "framer-motion"
 import cart from '../Assets/cart2.svg'
+import { ShopContext } from '../Context/ShopContext';
 
 const Navbar = () => {
     const [openNav,setOpenNav] = useState(true)
     const navRef = useRef();
     const navigate = useNavigate()
     const dispatch = useDispatch()
+    const {getTotalItems} = useContext(ShopContext)
 
     const showNavbar = () => {
         navRef.current.classList.toggle("responsive_nav")
@@ -44,7 +46,7 @@ const Navbar = () => {
                     whileHover={{ scale:1.1 }}
                     className='signupbtn text-white px-4'>Create Account
                 </motion.button>
-                <img onClick={()=>navigate("/cart")} className='cart ms-lg-' src={cart} alt='cart' />
+                <img onClick={()=>navigate("/cart")} className='cart ms-lg-' src={cart} alt='cart' /><span className='fw-bold cartCount'>{getTotalItems()}</span>
                 <button 
                     className='nav-btn nav-close-btn' onClick={showNavbar}>
                     <FaTimes onClick={toggle2} />
