@@ -1,0 +1,65 @@
+.body{
+    background-size: cover;
+    background-position: center;
+    /* background: linear-gradient(135deg, #fbfbfb, #f0e9dd); */
+    height: 100vh;
+}
+.main{
+    background: linear-gradient(135deg, #fbfbfb, #a6977d);
+    height: 100vh;
+}
+input{
+    background-color: #fffefd;
+    border: none !important;
+    border-radius: 4px !important;
+}
+.inputCon{
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 1rem;
+    min-height: 68vh;
+}
+.inputPurpose{
+    text-align: start;
+}
+input{
+    border: thin solid #181511 !important;
+    color: black;
+    width: 95% !important;
+    font-size: 1.5rem;
+}
+h5{
+    font-size: 2.5rem !important;
+    color: #181511;
+}
+.userLogin{
+    background-color: #181511;
+    padding-top: 0.7rem !important;
+    padding-bottom: 0.7rem !important;
+    border: none;
+}
+.error{
+    color: red;
+}
+
+input.input-error,select.input-error{
+    border-color: rgb(141, 5, 5);
+}
+.brandname{
+    position: relative;
+    right: 0.5rem;
+    top: 1.4rem !important;
+    font-size: 1.6rem;
+}
+
+@media screen and (max-width: 650px) {
+    .inputCon{
+        width: 95%; 
+        min-height: 50vh;
+    }
+    .userLogin:hover{
+        opacity: 0.5 !important;
+    }
+    .inputPurpose{
+        text-align: start;
+    }
+}

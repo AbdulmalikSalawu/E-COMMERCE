@@ -11,6 +11,7 @@ import Heropage from './Components/Heropage';
 import kidscategory from './Assets/kidscategory.png'
 import womencategory from './Assets/womencategory.png'
 import mencategory from './Assets/mencategory.png'
+import AddProduct from './Components/AddProduct';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         </Route>
         <Route path='/login' element={<Login />}></Route>
         <Route path='/signup' element={<Signup />}></Route>
+        <Route path='/addproduct' element={<AddProduct />}></Route>
         <Route path='/men' element={<Shopcategory banner={mencategory} category="men" />}></Route>
         <Route path='/kids' element={<Shopcategory banner={kidscategory} category="kids" />}></Route>
         <Route path='/women' element={<Shopcategory banner={womencategory} category="women" />}></Route>

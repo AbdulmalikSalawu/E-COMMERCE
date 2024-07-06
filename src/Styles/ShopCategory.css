@@ -16,4 +16,9 @@
         grid-template-columns: repeat(2, 1fr) !important;
         width: 90%;
     }
+    .bannerImage{
+        width: 90%;
+        height: 15rem;
+        margin-top: 2rem;
+    }
 }

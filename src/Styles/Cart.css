@@ -53,6 +53,9 @@ h1{
     position: relative;
     left: 4rem;
 }
+h3{
+    color: #181511 !important;
+}
 @media screen and (max-width:800px) {
     .mainCart {
         font-size: 0.8rem;

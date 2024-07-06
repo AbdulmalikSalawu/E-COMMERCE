@@ -12,7 +12,7 @@ const Shopcategory = (props) => {
     <div className='shop-category mt-3'>
       <Navbar />
 
-      <img src={props.banner} alt='' />
+      <img className='bannerImage' src={props.banner} alt='' />
       <div className="shopIndexSort">
         <p>
           <span>Showing 1-12</span> out of 36 products
