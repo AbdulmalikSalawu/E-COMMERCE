@@ -4,8 +4,11 @@ const passwordRules = /^(?=.*\d)(?=.*[a-z]).{5,}$/;
 const numberRules = /^[\d]{10}$/
 
 export const signupSchema = Yup.object().shape({
-    category: Yup.string().min(2, "must be at least two characters").required("Required"),
     name: Yup.string().min(2, "must be at least two characters").required("Required"),
-    newPrice: Yup.string().min(2, "must be at least two characters").required("Required"),
-    oldPrice: Yup.string().min(2, "must be at least two characters").required("Required"),
+    email: Yup.string().email("Please enter a valid email").required("Required"),
+    password: Yup
+    .string()
+    .min(6)
+    .matches(passwordRules, "must include a letter and a number")
+    .required("Required"),
 })
