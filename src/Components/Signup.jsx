@@ -13,7 +13,7 @@ function Signup() {
   const [cartData,setCartData] = useState("")
 
   const onSubmit = async (values, actions) => {
-    if(success === true){
+    // if(success === true){
       console.log(values);
       const name = values.firstname;
       const email = values.email;
@@ -35,7 +35,8 @@ function Signup() {
       catch(error){
         console.log(error)
       }
-    }}
+    // }
+  }
   
   const {values, errors, touched, isSubmitting,  handleBlur, handleChange, handleSubmit} = 
   useFormik({
