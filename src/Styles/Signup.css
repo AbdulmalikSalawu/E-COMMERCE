@@ -1,14 +1,12 @@
 .body{
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
-    /* height: 100vh; */
 }
 input{
-    background-color: rgb(252, 251, 251) !important;
+    background-color: #fffefd;
 }
 .inputCont{
-    background-color: white;
+    background: linear-gradient(135deg, #fbfbfb, #a6977d);
     border-radius: 1.5rem;
     min-height: 85vh;
 }

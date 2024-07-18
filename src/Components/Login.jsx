@@ -12,7 +12,7 @@ const Login = () => {
   const onSubmit = async (values,actions)=> {
     const email = values.email;
     const password = values.password;
-    fetch("http://localhost:5000/login", {
+    fetch("http://localhost:4000/loginUser", {
       method: "POST",
       crossDomain: true,
       headers: {
@@ -31,7 +31,7 @@ const Login = () => {
       console.log(data, "userRegister");
       if(data.status == "ok"){
         localStorage.setItem("token", data.data);
-        navigate('/dashboard')
+        navigate('/')
         actions.resetForm();
       }
       else{
@@ -54,7 +54,7 @@ const Login = () => {
           <div class='inputCon col-md-8 col-lg-4 d-block m-auto mt-4'>
             <h4 className={(loginStatus == "invalid login details") ? "text-center text-danger mt-2" : "text-center text-success mt-2"}>{loginStatus}</h4>
             <h5 class='text-center mt-3 fw-bold fs-4'>Login to your account</h5>
-            <p class='text-center'>Securely login to your piggyvest</p>
+            <p class='text-center'>Securely login to your account</p>
             <p class='ms-5 inputPurpose'><em>Email</em></p>
             <input type="text" placeholder="email" name="email" className="form-control w-75 d-block m-auto mt-2 text-center py-2" value={values.email} onChange={handleChange} onBlur={handleBlur} />
             {errors.email && touched.email && <p className='error text-center'>{errors.email}</p>}
