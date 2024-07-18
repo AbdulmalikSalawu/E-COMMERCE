@@ -40,7 +40,11 @@ const Navbar = () => {
                 <NavLink to='/men' onClick={navLinks}>Men</NavLink>
                 <NavLink to='/women' onClick={navLinks}>Women</NavLink>
                 <NavLink to='/kids' onClick={navLinks}>Kids</NavLink>
-                <NavLink to='/login' className='signinbtn mt-5'><small class='pt-5' onClick={navLinks}>Sign in</small></NavLink>
+                <NavLink to='/login' className='signinbtn mt-5'>
+                    {localStorage.getItem("token")?
+                    <small class='pt-5' onClick={()=>{localStorage.removeItem("token");window.location.replace('/')}}>Logout</small>
+                    :<small class='pt-5' onClick={navLinks}>Sign in</small>}
+                </NavLink>
 
                 <motion.button
                     whileHover={{ scale:1.1 }}

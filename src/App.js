@@ -30,7 +30,7 @@ function App() {
         <Route path='/signup' element={<Signup />}></Route>
         <Route path='/addproduct' element={<AddProduct />}></Route>
         <Route path='/men' element={<Shopcategory banner={mencategory} category="men" />}></Route>
-        <Route path='/kids' element={<Shopcategory banner={kidscategory} category="kids" />}></Route>
+        <Route path='/kids' element={<Shopcategory banner={kidscategory} category="kid" />}></Route>
         <Route path='/women' element={<Shopcategory banner={womencategory} category="women" />}></Route>
         {/* <Route path='*' element={<Nomatch />}></Route> */}
         {/* <Footer /> */}

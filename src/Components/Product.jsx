@@ -9,7 +9,7 @@ import Navbar from './Navbar'
 const Product = () => {
   const {productData} = useContext(ShopContext);
   const {productId} = useParams();
-  const product = productData.find((e)=> e.id === Number(productId));
+  const product = productData.find((e)=> e.id == (productId));
  
   return (
     <div>

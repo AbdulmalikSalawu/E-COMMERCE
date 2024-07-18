@@ -1,10 +1,10 @@
-import React, {createContext, useState} from 'react'
-import productData from '../Components/Data'
+import React, {createContext, useState,useEffect} from 'react'
+// import productData from '../Components/Data'
 
 export const ShopContext = createContext(null)
 const getDefaultCart = () => {
     let cart = {};
-    for (let index = 0; index < productData.length+1; index++) {
+    for (let index = 0; index < 300+1; index++) {
         cart[index] = 0
     }
     return cart;
@@ -12,8 +12,14 @@ const getDefaultCart = () => {
 
 const ShopContextProvider = (props) => {
     //Context provides a way to pass data through the component tree without having to pass props down manually at every level.
-
+    const [productData,setProductData] = useState([])
     const [cartItems, setCartItems] = useState(getDefaultCart());
+
+    useEffect(()=>{
+        fetch('http://localhost:4000/getAllProducts')
+        .then((response)=>response.json())
+        .then((data)=>setProductData(data.data))
+    })
 
     const addToCart = (itemId) => {
         setCartItems((prev)=>({...prev,[itemId]:prev[itemId]+1}))
