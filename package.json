@@ -26,6 +26,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "proxy": "https://storeformalik.onrender.com",
   "eslintConfig": {
     "extends": [
       "react-app",
