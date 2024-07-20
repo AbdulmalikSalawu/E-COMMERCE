@@ -20,7 +20,7 @@ function Signup() {
       const password = values.password;
       // new Promise((resolve) => setTimeout(resolve, 1000))
       setMessage("creating account...")
-      const url = "http://localhost:4000/signup"
+      const url = "https://storeformalik.onrender.com/signup"
       try {
         await axios.post(url,{name,email,password,cartData}).then((response)=>{
             console.log(response.data)

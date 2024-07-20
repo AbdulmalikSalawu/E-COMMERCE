@@ -8,7 +8,7 @@ const NewCollections = () => {
   const [productData,setProductData] = useState([])
 
   useEffect(()=>{
-    fetch("http://localhost:4000/newCollections")
+    fetch("https://storeformalik.onrender.com/newCollections")
     .then((response)=>response.json())
     .then((data)=>setProductData(data))
   },[])

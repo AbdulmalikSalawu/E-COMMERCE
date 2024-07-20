@@ -16,25 +16,67 @@ const ShopContextProvider = (props) => {
     const [cartItems, setCartItems] = useState(getDefaultCart());
 
     useEffect(()=>{
-        fetch('http://localhost:4000/getAllProducts')
+        // fetch('http://localhost:4000/getAllProducts')
+        fetch('https://storeformalik.onrender.com/getAllProducts')
         .then((response)=>response.json())
         .then((data)=>setProductData(data.data))
-    })
+
+        if(localStorage.getItem('token')){
+            fetch('https://storeformalik.onrender.com/getCart',{
+                method:'POST',
+                headers:{
+                    Accept:'application/form-data',
+                    'token':`${localStorage.getItem('token')}`,
+                    'Content-Type':'application/json'
+                },
+                body:"",
+        }).then((response)=>response.json())
+        .then((data)=>setCartItems(data));
+        }
+    },[])
 
     const addToCart = (itemId) => {
         setCartItems((prev)=>({...prev,[itemId]:prev[itemId]+1}))
-        console.log(cartItems)
+        if(localStorage.getItem('token')){
+            fetch("https://storeformalik.onrender.com/addToCart",{
+                method:'POST',
+                headers: {
+                    Accept: "application/form-data",
+                    'token': `${localStorage.getItem('token')}`,
+                    'Content-Type':'application/json',
+                },
+                body:JSON.stringify({"itemId":itemId}),
+            })
+            .then((response)=>response.json())
+            .then((data)=>console.log(data))
+        }
+        // console.log(cartItems)
     }
 
     const removeFromCart = (itemId) => {
         setCartItems((prev)=>({...prev,[itemId]:prev[itemId]-1}))
+        if(localStorage.getItem('token')){
+            fetch("https://storeformalik.onrender.com/removeFromCart",{
+                method:'POST',
+                headers: {
+                    Accept: "application/form-data",
+                    'token': `${localStorage.getItem('token')}`,
+                    'Content-Type':'application/json',
+                },
+                body:JSON.stringify({"itemId":itemId}),
+            })
+            .then((response)=>response.json())
+            .then((data)=>console.log(data))
+        }
     }
+
+
 
     const getTotalAmount = () => {
         let totalAmount = 0;
         for(const item in cartItems) {
             if(cartItems[item]>0){
-                let itemInfo = productData.find((product)=>product.id===Number(item))
+                let itemInfo = productData.find((product)=>product.id==(item))
                 totalAmount += itemInfo.newPrice * cartItems[item]
             }
         }

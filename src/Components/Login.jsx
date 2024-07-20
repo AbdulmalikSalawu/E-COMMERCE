@@ -12,7 +12,7 @@ const Login = () => {
   const onSubmit = async (values,actions)=> {
     const email = values.email;
     const password = values.password;
-    fetch("http://localhost:4000/loginUser", {
+    fetch("https://storeformalik.onrender.com/loginUser", {
       method: "POST",
       crossDomain: true,
       headers: {

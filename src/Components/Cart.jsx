@@ -1,18 +1,55 @@
-import React, { useContext } from 'react'
+import React, { useContext,useEffect, useState } from 'react'
 import "../Styles/Cart.css"
 import { ShopContext } from '../Context/ShopContext'
 import remove from "../Assets/remove.svg"
 import Navbar from './Navbar'
-import productData from './Data'
-import plus from '../Assets/plus-square.svg'
-import dash from '../Assets/dash-square.svg'
-import arrow from '../Assets/arrow-left.svg'
-import carti from '../Assets/cart2.svg'
+// import productData from './Data'
+// import plus from '../Assets/plus-square.svg'
+// import dash from '../Assets/dash-square.svg'
+// import arrow from '../Assets/arrow-left.svg'
+// import carti from '../Assets/cart2.svg'
 import { useNavigate } from 'react-router'
+import axios from 'axios'
 
 const Cart = () => {
     const {getTotalAmount,productData,cartItems,removeFromCart} = useContext(ShopContext)
     const navigate = useNavigate()
+    const [email,setEmail] = useState("")
+    const [userData,setUserData] = useState("")
+
+    useEffect(() => {
+        fetch("https://storeformalik.onrender.com/userData", {
+          method: "POST",
+          crossDomain: true,
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            token:localStorage.getItem("token"),
+          }),
+        })
+        .then((res)=>res.json())
+        .then((data)=> {
+            console.log(data, "userData")
+            setUserData(data.data)
+            setEmail(data.data.email)
+            if (data.data=="token expired") {
+              alert("session expired, login again");
+              localStorage.clear();
+              navigate('/login')
+            }
+          })
+      }, [])
+
+    const paywithpaystack = () => {
+        const totalCost = getTotalAmount()
+        axios.post(`https://abdulmalikyinka.onrender.com/paywithpaystack`,{totalCost,email})
+        .then((res)=>{
+              let data = res.data
+              window.location.href=data.data.authorization_url
+        })
+    }
 
   return (
     <div>
@@ -62,7 +99,8 @@ const Cart = () => {
                         <h3>${getTotalAmount()}</h3>
                     </div>
                 </div>
-                <button className='checkout mt-4'>Proceed to Checkout</button>
+                <button onClick={paywithpaystack} className='checkout mt-4'>Proceed to Checkout</button>
+                {email}
             </div>
         </div>
        
