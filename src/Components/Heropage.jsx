@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Navbar from './Navbar';
 import { motion, spring, useInView, useAnimation } from "framer-motion"
 import croppedLady from '../Assets/herolady.PNG'
@@ -11,6 +11,32 @@ import NewsLetter from './NewsLetter';
 import Footer from './Footer';
 
 const Heropage = () => {
+
+  const [email,setEmail] = useState("")
+
+  useEffect(() => {
+    fetch("https://storeformalik.onrender.com/userData", {
+      method: "POST",
+      crossDomain: true,
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({
+        token:localStorage.getItem("token"),
+      }),
+    })
+    .then((res)=>res.json())
+    .then((data)=> {
+        console.log(data, "userData")
+        setEmail(data.data.email)
+        if (data.data=="token expired") {
+          alert("session expired, login again");
+          localStorage.clear();
+          navigate('/login')
+        }
+      })
+  }, [])
 
     const navigate = useNavigate()
 
@@ -29,7 +55,8 @@ const Heropage = () => {
                 initial="hidden"
                 animate="visible"
                 transition={{duration:0.5, delay:0.25}}
-              >   
+              >  
+                {email}
                 <h1 className='mt-5 ms-5 bigHeading fw-bold'>New Collections for Everyone</h1>
                 <p className='pe-lg-5 ms-5 fs-5 mission'>Discover exclusive deals and premium products. Shop now for unbeatable prices, fast shipping, and exceptional customer service. Elevate your shopping experience with us today!</p>
               </motion.div>

@@ -14,11 +14,12 @@ import axios from 'axios'
 const Cart = () => {
     const {getTotalAmount,productData,cartItems,removeFromCart} = useContext(ShopContext)
     const navigate = useNavigate()
-    const [email,setEmail] = useState("")
+    const [email,setEmail] = useState("mali@gmail.com")
     const [userData,setUserData] = useState("")
 
     useEffect(() => {
-        fetch("https://storeformalik.onrender.com/userData", {
+        // fetch("https://storeformalik.onrender.com/userData", {
+        fetch("http://localhost:4000/userData", {
           method: "POST",
           crossDomain: true,
           headers: {
