@@ -14,7 +14,7 @@ import axios from 'axios'
 const Cart = () => {
     const {getTotalAmount,productData,cartItems,removeFromCart} = useContext(ShopContext)
     const navigate = useNavigate()
-    const [email,setEmail] = useState("mali@gmail.com")
+    const [email,setEmail] = useState("youremail@gmail.com")
     const [userData,setUserData] = useState("")
 
     useEffect(() => {
@@ -45,11 +45,14 @@ const Cart = () => {
 
     const paywithpaystack = () => {
         const totalCost = getTotalAmount()
+        if(localStorage.getItem('token')){
         axios.post(`https://abdulmalikyinka.onrender.com/paywithpaystack`,{totalCost,email})
         .then((res)=>{
               let data = res.data
               window.location.href=data.data.authorization_url
-        })
+        })} else {
+            navigate('/login')
+        }
     }
 
   return (
@@ -70,7 +73,7 @@ const Cart = () => {
             return  ( 
                 <div key={e.id}>
                     <div className="cartFormat mainCart">
-                        <img src={e.image} alt="" className='productIcon' />
+                        <img src={e.newImage} alt="" className='productIcon' />
                         <p className='name'>{e.name}</p>
                         <p className='me-lg-5 price'>{e.newPrice}</p>
                         <button className='quantity'>{cartItems[e.id]}</button>

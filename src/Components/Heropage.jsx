@@ -15,7 +15,9 @@ const Heropage = () => {
   const [email,setEmail] = useState("")
 
   useEffect(() => {
-    fetch("https://storeformalik.onrender.com/userData", {
+    if(localStorage.getItem('token')){
+      // fetch("http://localhost:4000/userData", {
+      fetch("https://storeformalik.onrender.com/userData", {
       method: "POST",
       crossDomain: true,
       headers: {
@@ -35,7 +37,7 @@ const Heropage = () => {
           localStorage.clear();
           navigate('/login')
         }
-      })
+      })}
   }, [])
 
     const navigate = useNavigate()

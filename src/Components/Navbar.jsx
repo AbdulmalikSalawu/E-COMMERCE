@@ -47,8 +47,9 @@ const Navbar = () => {
                 </NavLink>
 
                 <motion.button
+                    // onClick={navigate('/signup')}
                     whileHover={{ scale:1.1 }}
-                    className='signupbtn text-white px-4'>Create Account
+                    className='signupbtn text-white px-4'><small className='px-2' onClick={()=>navigate('/signup')}>Create Account</small>
                 </motion.button>
                 <img onClick={()=>navigate("/cart")} className='cart ms-lg-' src={cart} alt='cart' /><span className='fw-bold cartCount'>{getTotalItems()}</span>
                 <button 
