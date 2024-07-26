@@ -36,10 +36,12 @@ const Navbar = () => {
         <header className='sticky-top shadow-sm'>
             <span className='navsvg d-flex ms-lg-3'><img class="logo ms-5" src={logo} alt="svg image"/></span>
             <nav ref={navRef} className='pb-2'>
-                <NavLink to='/' onClick={navLinks}>Shop</NavLink>
+                <NavLink to='/' className='shop' onClick={navLinks}>Shop</NavLink>
                 <NavLink to='/men' onClick={navLinks}>Men</NavLink>
                 <NavLink to='/women' onClick={navLinks}>Women</NavLink>
                 <NavLink to='/kids' onClick={navLinks}>Kids</NavLink>
+                <NavLink to='/gadgets' onClick={navLinks}>Gadgets</NavLink>
+                <NavLink to='/beauty' onClick={navLinks}>Beauty</NavLink>
                 <NavLink to='/login' className='signinbtn mt-5'>
                     {localStorage.getItem("token")?
                     <small class='pt-5' onClick={()=>{localStorage.removeItem("token");window.location.replace('/')}}>Logout</small>

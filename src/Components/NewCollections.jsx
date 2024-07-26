@@ -2,6 +2,7 @@ import React,{useState,useEffect} from 'react'
 import '../Styles/NewCollections.css'
 // import productData from './Data'
 import Items from './Items'
+import Navbar from './Navbar'
 
 const NewCollections = () => {
 
@@ -15,6 +16,7 @@ const NewCollections = () => {
 
   return (
     <div className='collections'>
+      {/* {localStorage.getItem("addnavbar")? (<Navbar />) : ""} */}
         <h2 className='mt-3'>NEW COLLECTIONS</h2>
         <hr />
         <div className='collections-item'>

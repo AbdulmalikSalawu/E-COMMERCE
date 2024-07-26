@@ -112,6 +112,13 @@ small{
     nav a{
         margin-top: -1.4rem;
     }
+    .shop{
+        margin-top: 4rem !important;
+    }
+    .cart{
+        position: relative;
+        bottom: 4rem;
+    }
     .save{margin-top: 3.7rem;}
     header .nav-btn{
         visibility: visible;
@@ -174,7 +181,7 @@ small{
     }
     .cartCount{
         position: relative;
-        bottom: 6rem;
+        bottom: 10rem;
         left: 2.5rem;
         font-size: 1.2rem;
     }

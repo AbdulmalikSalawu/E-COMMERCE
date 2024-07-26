@@ -18,8 +18,8 @@ const Cart = () => {
     const [userData,setUserData] = useState("")
 
     useEffect(() => {
-        // fetch("https://storeformalik.onrender.com/userData", {
-        fetch("http://localhost:4000/userData", {
+        fetch("https://storeformalik.onrender.com/userData", {
+        // fetch("http://localhost:4000/userData", {
           method: "POST",
           crossDomain: true,
           headers: {

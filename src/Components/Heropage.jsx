@@ -16,6 +16,7 @@ const Heropage = () => {
 
   useEffect(() => {
     if(localStorage.getItem('token')){
+      localStorage.removeItem("addnavbar")
       // fetch("http://localhost:4000/userData", {
       fetch("https://storeformalik.onrender.com/userData", {
       method: "POST",
@@ -41,6 +42,10 @@ const Heropage = () => {
   }, [])
 
     const navigate = useNavigate()
+    const newCollections = () => {
+      localStorage.setItem("addnavbar","true")
+      navigate('/newcollections')
+    }
 
   return (
     <div>
@@ -70,7 +75,7 @@ const Heropage = () => {
                   // animate={{ scale:1.5 }} 
                   transition={{duration: 1,  type: 'spring', stiffness: 120 }}
                   whileHover={{ scale:1.02 }}
-                  onClick={() => navigate('/signup')} className='herobutton ms-lg-5 mt-3'>Latest collection
+                  onClick={newCollections} className='herobutton ms-lg-5 mt-3'>Latest collection
 
                 </motion.button><br/>
               </div>

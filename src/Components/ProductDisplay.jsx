@@ -41,13 +41,16 @@ const ProductDisplay = (props) => {
             </div>
             <div className="size">
                 <h1>Select size</h1>
-                <div className="sizeCategories">
+                {product.category=="gadgets"?"No Size Option for Gadgets":(
+                    <div className="sizeCategories">
                     <div>S</div>
                     <div>M</div>
                     <div>L</div>
                     <div>XL</div>
                     <div>XXL</div>
                 </div>
+                )}
+                
             </div>
             <button onClick={()=> {addToCart(product.id)}} className='addToCart'>ADD TO CART</button>
             <p className='category'><span>Category :</span>{product.category}</p>
