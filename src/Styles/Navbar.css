@@ -111,13 +111,14 @@ small{
     
     nav a{
         margin-top: -1.4rem;
+        overflow-y: hidden !important;
     }
     .shop{
-        margin-top: 4rem !important;
+        margin-top: -5rem !important;
     }
     .cart{
         position: relative;
-        bottom: 4rem;
+        bottom: 7rem !important;
     }
     .save{margin-top: 3.7rem;}
     header .nav-btn{
@@ -128,7 +129,8 @@ small{
         position: fixed;
         top: 0;
         left: 0;
-        height: 100%;
+        /* height: 100%; */
+        height: 140vh;
         width: 100%;
         display: flex;
         flex-direction: column;
@@ -138,7 +140,7 @@ small{
         /* background-color: var(--mainColorLight); */
         background-color: #cfb69f;
         transition: 2sec;
-        transform: translateY(-100vh);
+        transform: translateY(-140vh);
     }
     .d-lg-none{
        visibility: visible;
@@ -181,19 +183,35 @@ small{
     }
     .cartCount{
         position: relative;
-        bottom: 10rem;
+        bottom: 13rem;
         left: 2.5rem;
         font-size: 1.2rem;
     }
     /* td{width: 20% !important;} */
 }
-@media screen and (max-width: 350px){
+@media screen and (max-width: 355px){
+    
     .save{margin-top: 4rem;}
     .brandname{
         font-size: 1.1rem;
         position: relative;
         top: 1.8rem;
         right: 2.8rem;
+    }
+    .shop{
+        margin-top: 0rem !important;
+    }
+    header nav{
+        gap: 2rem !important;
+    }
+    .signinbtn{
+        top: -4.5rem;
+    }
+    .signupbtn{
+        top: -4.3rem;
+    }
+    .cartCount{
+        bottom: 11rem;
     }
 }
 @media screen and (min-width:1150px) {
