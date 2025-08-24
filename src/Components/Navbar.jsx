@@ -7,14 +7,43 @@ import {useDispatch} from 'react-redux'
 import {setShow, removeShow} from '../Features/navSlice'
 import { motion, spring, useInView, useAnimation } from "framer-motion"
 import cart from '../Assets/cart2.svg'
+import person from '../Assets/person.svg'
 import { ShopContext } from '../Context/ShopContext';
+import { useEffect } from 'react';
 
 const Navbar = () => {
     const [openNav,setOpenNav] = useState(true)
+    const [userData, setUserData] = useState({})
     const navRef = useRef();
     const navigate = useNavigate()
     const dispatch = useDispatch()
     const {getTotalItems} = useContext(ShopContext)
+
+     useEffect(() => {
+        if(localStorage.getItem('token')){
+          // fetch("http://localhost:4000/userData", {
+          fetch("https://storeformalik.onrender.com/userData", {
+          method: "POST",
+          crossDomain: true,
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            token:localStorage.getItem("token"), 
+          }),
+        })
+        .then((res)=>res.json())
+        .then((data)=> {
+            console.log(data, "userData")
+            setUserData(data.data)
+            if (data.data=="token expired") {
+              alert("session expired, login again");
+              localStorage.clear();
+              navigate('/login')
+            }
+          })}
+      }, [])
 
     const showNavbar = () => {
         navRef.current.classList.toggle("responsive_nav")
@@ -54,6 +83,7 @@ const Navbar = () => {
                     className='signupbtn text-white px-4'><small className='px-2' onClick={()=>navigate('/signup')}>Create Account</small>
                 </motion.button>
                 <img onClick={()=>navigate("/cart")} className='cart ms-lg-' src={cart} alt='cart' /><span className='fw-bold cartCount'>{getTotalItems()}</span>
+                <img onClick={()=>navigate("/profile",{state:userData})} className='person ms-lg-' src={person} alt='profile' />
                 <button 
                     className='nav-btn nav-close-btn' onClick={showNavbar}>
                     <FaTimes onClick={toggle2} />

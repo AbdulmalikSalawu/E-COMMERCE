@@ -5,6 +5,7 @@ import Shop from './Components/Shop';
 import Login from './Components/Login';
 import Product from './Components/Product';
 import Signup from './Components/Signup';
+import Profile from './Components/Profile';
 import Cart from './Components/Cart';
 import Shopcategory from './Components/Shopcategory';
 import Heropage from './Components/Heropage';
@@ -32,6 +33,7 @@ function App() {
         </Route>
         <Route path='/login' element={<Login />}></Route>
         <Route path='/signup' element={<Signup />}></Route>
+        <Route path='/profile' element={<Profile />}></Route>
         <Route path='/addproduct' element={<AddProduct />}></Route>
         <Route path='/men' element={<Shopcategory banner={mencategory} category="men" />}></Route>
         <Route path='/kids' element={<Shopcategory banner={kidscategory} category="kid" />}></Route>

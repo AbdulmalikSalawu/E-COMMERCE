@@ -26,13 +26,13 @@ const Heropage = () => {
         Accept: "application/json",
       },
       body: JSON.stringify({
-        token:localStorage.getItem("token"),
+        token:localStorage.getItem("token"), 
       }),
     })
     .then((res)=>res.json())
     .then((data)=> {
         console.log(data, "userData")
-        setEmail(data.data.email)
+        setEmail(data.data.name)
         if (data.data=="token expired") {
           alert("session expired, login again");
           localStorage.clear();
@@ -63,7 +63,7 @@ const Heropage = () => {
                 animate="visible"
                 transition={{duration:0.5, delay:0.25}}
               >  
-                {email}
+                <h3>Welcome {email}</h3>
                 <h1 className='mt-5 ms-5 bigHeading fw-bold'>New Collections for Everyone</h1>
                 <p className='pe-lg-5 ms-5 fs-5 mission'>Discover exclusive deals and premium products. Shop now for unbeatable prices, fast shipping, and exceptional customer service. Elevate your shopping experience with us today!</p>
               </motion.div>

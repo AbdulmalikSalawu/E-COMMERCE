@@ -25,6 +25,10 @@ header{
     height: 2.2rem;
     width: 2.2rem;
 }
+.person{
+    height: 2.2rem;
+    width: 2.2rem;
+}
 tr{
     height: 3rem !important;
 }
@@ -119,6 +123,10 @@ small{
     .cart{
         position: relative;
         bottom: 7rem !important;
+    }
+    .person{
+        position: relative;
+        bottom: 14rem !important;
     }
     .save{margin-top: 3.7rem;}
     header .nav-btn{
