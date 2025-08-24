@@ -37,7 +37,7 @@ const ProductDisplay = (props) => {
                 <div className="newPrice">${product.newPrice}</div>
             </div>
             <div className="description">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis aliquid, quibusdam quisquam deserunt qui ipsa beatae a. Tenetur, corrupti quaerat.
+                {product.description? product.description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut laoreet dictum, lorem urna cursus lorem, at dictum sapien lorem non lorem."}
             </div>
             <div className="size">
                 <h1>Select size</h1>
